@@ -1,7 +1,7 @@
 <?php
 
-class FacultyController extends \BaseController {
-
+class FacultyController extends \BaseController
+{
     /**
      * Display a listing of the resource.
      *
@@ -31,17 +31,20 @@ class FacultyController extends \BaseController {
     public function store()
     {
         $faculty = new Faculty();
-        $faculty->first_name = Input::get('first_name');
-        $faculty->last_name = Input::get('last_name');
-
+        $faculty->first = Input::get('first');
+        $faculty->middle = Input::get('middle');
+        $faculty->last = Input::get('last');
+        $faculty->suffix = Input::get('suffix');
+        $faculty->id = Input::get('id');
         $faculty->save();
+
         return Redirect::to('faculty/' . $faculty->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int      $id
      * @return Response
      */
     public function show($id)
@@ -53,7 +56,7 @@ class FacultyController extends \BaseController {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int      $id
      * @return Response
      */
     public function edit($id)
@@ -65,7 +68,7 @@ class FacultyController extends \BaseController {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int      $id
      * @return Response
      */
     public function update($id)
@@ -77,18 +80,22 @@ class FacultyController extends \BaseController {
         $faculty->last = Input::get('last');
         $faculty->suffix = Input::get('suffix');
         $faculty->save();
+
         return Redirect::to('faculty/' . $faculty->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int      $id
      * @return Response
      */
     public function destroy($id)
     {
-        // TODO
+        $faculty = Faculty::findOrFail($id);
+        $faculty->delete();
+
+        return Redirect::to('faculty');
     }
 
 }
