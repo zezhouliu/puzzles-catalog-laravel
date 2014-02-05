@@ -13,4 +13,6 @@
 
 Route::resource('courses', 'CourseController');
 Route::resource('faculty', 'FacultyController');
+Route::resource('fields', 'FieldsController');
+
 Route::controller('/', 'BaseController');
