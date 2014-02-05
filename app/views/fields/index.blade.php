@@ -1,15 +1,14 @@
 <div class="row">
-	@foreach($courses as $course)
+	@foreach($fields as $field)
 
 	    <div class="col-lg-12">
-	        <h1>{{{ $course->title }}}</h1>
+	        <h1>{{{ $field->title }}}</h1>
 	        <p>
-	            <a class="btn btn-primary" href="/courses/{{ $course->id }}" role="button">View</a>
-	            <a class="btn btn-primary" href="/courses/{{ $course->id }}/edit" role="button">Edit</a>
+	            <a class="btn btn-primary" href="/fields/{{ $field->id }}" role="button">View</a>
 	        </p>
 	    </div>
 
 	@endforeach
 
-	{{$courses->links()}}
+	{{$fields->links()}}
 </div>
