@@ -9,7 +9,7 @@ class FacultyController extends \BaseController
      */
     public function index()
     {
-        $faculty = Faculty::get();
+        $faculty = Faculty::paginate(30);
         $this->layout->content = View::make('faculty.index', ['faculty' => $faculty]);
     }
 
