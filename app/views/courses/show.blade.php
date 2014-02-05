@@ -38,22 +38,22 @@
 
         <div class="form-group">
             <strong>Description:</strong>
-            {{ Form::textarea('description', null, array('class'=>'form-control')) }}
+            {{{$course->description}}}
         </div>
 
         <div class="form-group">
             <strong>Prerequisites:</strong>
-            {{ Form::textarea('prerequisites', null, array('class'=>'form-control')) }}
+            {{{$course->prerequisites}}}
         </div>
 
         <div class="form-group">
             <strong>Notes:</strong>
-            {{ Form::textarea('notes', null, array('class'=>'form-control')) }}
+            {{{$course->notes}}}
         </div>
 
         <div class="form-group">
             <strong>Meetings:</strong>
-            {{ Form::textarea('meetings', null, array('class'=>'form-control')) }}
+            {{{$course->meetings}}}
         </div>
 
         <div class="form-group">
