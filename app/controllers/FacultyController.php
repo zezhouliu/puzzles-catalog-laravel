@@ -35,7 +35,7 @@ class FacultyController extends \BaseController
         $faculty->middle = Input::get('middle');
         $faculty->last = Input::get('last');
         $faculty->suffix = Input::get('suffix');
-        $faculty->id = Input::get('id');
+        $faculty->id = Input::get('faculty_id');
         $faculty->save();
 
         return Redirect::to('faculty/' . $faculty->id);

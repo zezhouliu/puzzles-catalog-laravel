@@ -32,6 +32,19 @@ class CourseController extends \BaseController {
     {
         $course = new Course();
         $course->title = Input::get('title');
+        $course->cat_num = Input::get('cat_num');
+        $course->term = Input::get('term');
+        $course->bracketed = Input::get('bracketed');
+        $course->field = Input::get('field');
+        $course->number = Input::get('number');
+        $course->faculty = Input::get('faculty');
+        $course->description = Input::get('description');
+        $course->prerequisites = Input::get('prerequisites');
+        $course->notes = Input::get('notes');
+        $course->meetings = Input::get('meetings');
+        $course->building = Input::get('building');
+        $course->room = Input::get('room');
+
         $course->save();
         return Redirect::to('courses/' . $course->id);
     }
@@ -70,6 +83,19 @@ class CourseController extends \BaseController {
     {
         $course = Course::findOrFail($id);
         $course->title = Input::get('title');
+        $course->cat_num = Input::get('cat_num');
+        $course->term = Input::get('term');
+        $course->bracketed = Input::get('bracketed');
+        $course->field = Input::get('field');
+        $course->number = Input::get('number');
+        $course->faculty = Input::get('faculty');
+        $course->description = Input::get('description');
+        $course->prerequisites = Input::get('prerequisites');
+        $course->notes = Input::get('notes');
+        $course->meetings = Input::get('meetings');
+        $course->building = Input::get('building');
+        $course->room = Input::get('room');
+
         $course->save();
         return Redirect::to('courses/' . $course->id);
     }

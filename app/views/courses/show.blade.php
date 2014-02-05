@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <strong>Bracketed:</strong>
-            {{{$course->bracketed}}}
+            {{{$course->bracketed ? 'Yes' : 'No'}}}
         </div>
 
         <div class="form-group">
