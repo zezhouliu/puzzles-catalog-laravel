@@ -1,3 +1,4 @@
+<h1>List of courses</h1>
 <table class="table">
 	<thead>
 		<tr>
