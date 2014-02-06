@@ -28,7 +28,21 @@
                 </ul>
             </div>
 
-            <?= $content; ?>
+            @if(Session::has('success'))
+                <div class="alert alert-success" style="margin-top:20px">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{{ Session::get('success') }}}
+                </div>
+            @endif
+
+            @if(Session::has('warning'))
+                <div class="alert alert-danger" style="margin-top:20px">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{{ Session::get('warning') }}}
+                </div>
+            @endif
+
+            {{ $content }}
 
             <div class="footer">
                 <p>&#169; John Harvard</p>

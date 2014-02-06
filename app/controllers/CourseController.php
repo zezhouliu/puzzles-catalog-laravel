@@ -46,6 +46,8 @@ class CourseController extends \BaseController {
         $course->room = Input::get('room');
 
         $course->save();
+        Session::flash('success', "Successfully created the course {$course->title}");
+
         return Redirect::to('courses/' . $course->id);
     }
 
@@ -97,6 +99,8 @@ class CourseController extends \BaseController {
         $course->room = Input::get('room');
 
         $course->save();
+        Session::flash('success', "Successfully updated the course {$course->title}");
+
         return Redirect::to('courses/' . $course->id);
     }
 
@@ -110,10 +114,11 @@ class CourseController extends \BaseController {
     {
         // TODO
         $course = Course::findOrFail($id);
+        $title = $course->title;
         $course->delete();
 
         // Redirect
-        Session::flash('message', 'Successfully deleted the course!');
+        Session::flash('warning', "Successfully deleted the course {$title}");
         return Redirect::to('courses');
     }
 
