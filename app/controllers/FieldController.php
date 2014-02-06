@@ -31,7 +31,8 @@ class FieldController extends \BaseController
     public function store()
     {
         $field = new Field();
-        $field->title = Input::get('title');
+        $field->code = Input::get('code');
+        $field->name = Input::get('name');
         $field->save();
 
         return Redirect::to('fields/' . $field->id);
@@ -70,7 +71,8 @@ class FieldController extends \BaseController
     public function update($id)
     {
         $field = Field::findOrFail($id);
-        $field->title = Input::get('title');
+        $field->code = Input::get('code');
+        $field->name = Input::get('name');
         $field->save();
 
         return Redirect::to('fields/' . $field->id);
