@@ -1,4 +1,4 @@
-<h1>List of courses</h1>
+<h1>List of concentrations</h1>
 <table class="table">
 	<thead>
 		<tr>
