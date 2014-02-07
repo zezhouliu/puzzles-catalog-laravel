@@ -29,4 +29,4 @@
 
 </table>
 
-{{$courses->links()}}
+{{$courses->appends(array('sort'=>$sort, 'order'=>$order))->links()}}

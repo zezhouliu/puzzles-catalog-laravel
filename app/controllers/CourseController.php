@@ -9,8 +9,17 @@ class CourseController extends \BaseController {
      */
     public function index()
     {
-        $courses = Course::paginate(30);
-        $this->layout->content = View::make('courses.index', ['courses' => $courses]);
+        # Basic sorting
+        $allowed = array('id', 'title');
+        $sort = in_array(Input::get('sort'), $allowed) ? Input::get('sort') : 'id';
+        $order = Input::get('order') === 'desc' ? 'desc' : 'asc'; // default asc
+
+        $courses = Course::orderBy($sort, $order)->paginate(30);
+        $this->layout->content = View::make('courses.index', [
+            'courses' => $courses, 
+            'sort' => $sort, 
+            'order' => $order
+        ]);
     }
 
     /**
@@ -34,7 +43,7 @@ class CourseController extends \BaseController {
         $course->title = Input::get('title');
         $course->cat_num = Input::get('cat_num');
         $course->term = Input::get('term');
-        $course->bracketed = Input::get('bracketed');
+        $course->bracketed = Input::get('bracketed', false);
         $course->field = Input::get('field');
         $course->number = Input::get('number');
         $course->faculty = Input::get('faculty');
