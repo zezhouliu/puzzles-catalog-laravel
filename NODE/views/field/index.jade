@@ -1,5 +1,21 @@
 extends ../layout
 
 block content
-  h1= title
-  p Fields list
+    h1= title
+    table.table
+        thead
+            tr
+                th Name
+                th Code
+                th Actions
+        tbody
+            each field in fields
+                tr
+                    td= field.get('name')
+                    td= field.get('code')
+                    td
+                        a.btn.btn-primary(href="/fields/"+field.get('id')) Show
+                        a.btn.btn-info(href="/fields/" + field.get('id') + "/edit") Edit
+                        a.btn.btn-danger(href="#") Delete
+
+
