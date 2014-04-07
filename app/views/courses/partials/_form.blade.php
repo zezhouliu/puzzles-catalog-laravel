@@ -1,27 +1,12 @@
-<div class="form-group">
-    {{ Form::label('title', 'Title:') }}
-    {{ Form::text('title', null, array('class'=>'form-control')) }}
-</div>
+{{ Form::bText('title', 'Title') }}
 
-<div class="form-group">
-    {{ Form::label('cat_num', 'Cat num:') }}
-    {{ Form::text('cat_num', null, array('class'=>'form-control')) }}
-</div>
+{{ Form::bText('cat_num', 'Category number') }}
 
-<div class="form-group">
-    {{ Form::label('term', 'Term:') }}
-    {{ Form::text('term', null, array('class'=>'form-control')) }}
-</div>
+{{ Form::bText('term', 'Term') }}
 
-<div class="form-group">
-    {{ Form::label('bracketed', 'Bracketed:') }}
-    {{ Form::checkbox('bracketed') }}
-</div>
+{{ Form::bCheckbox('bracketed', 'Bracketed') }}
 
-<div class="form-group">
-    {{ Form::label('field', 'Field:') }}
-    {{ Form::text('field', null, array('class'=>'form-control')) }}
-</div>
+{{ Form::bText('field', 'Field') }}
 
 <div class="form-group">
     {{ Form::label('number', 'Number:') }}
