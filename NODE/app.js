@@ -6,8 +6,22 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var field = require('./routes/field');
 var http = require('http');
 var path = require('path');
+
+// Initialize database connection
+var Bookshelf = require('bookshelf');
+var MySql = Bookshelf.initialize({
+    client: 'mysql',
+    connection: {
+        host: '127.0.0.1',
+        user: 'jharvard',
+        password: 'crimson',
+        database: 'catalog',
+        charset: 'utf8'
+    }
+});
 
 var app = express();
 
@@ -29,7 +43,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/fields', field.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
