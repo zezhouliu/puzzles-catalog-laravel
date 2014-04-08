@@ -1,8 +1,8 @@
 var Bookshelf = require('bookshelf'),
-    bookshelfInstance;
+    baseModel;
 
 // Initialize a new bookshelf instance, for reference elsewhere in the app.
-bookshelfInstance = Bookshelf.initialize({
+baseModel = Bookshelf.initialize({
     client: 'mysql',
     connection: {
         host: '127.0.0.1',
@@ -13,4 +13,4 @@ bookshelfInstance = Bookshelf.initialize({
     }
 });
 
-module.exports = bookshelfInstance;
+module.exports = baseModel;

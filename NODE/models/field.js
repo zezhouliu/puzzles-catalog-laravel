@@ -1,14 +1,18 @@
-var baseModel = require('./baseModel');
+/***
+ * A model to represent fields
+ */
+var baseModel = require('./baseModel'),
+    Field,
+    Fields;
 
-var Field = baseModel.Model.extend({
+Field = baseModel.Model.extend({
     tableName: 'fields'
 });
 
-var Fields = baseModel.Collection.extend({
+Fields = baseModel.Collection.extend({
     model: Field
 });
 
-// usage new field()
 module.exports = {
     Field: Field,
     Fields: Fields
